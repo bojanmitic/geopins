@@ -7,10 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import { ME_QUERY } from "../../graphql/queries";
 import { BASE_URL } from "./../../client";
 
-const onFailure = err => {
-  console.error("Error logging in", err);
-};
-
 const Login = ({ classes }) => {
   const { dispatch } = useContext(Context);
 
@@ -33,6 +29,15 @@ const Login = ({ classes }) => {
       onFailure(error);
     }
   };
+
+  const onFailure = err => {
+    console.error("Error logging in", err);
+    dispatch({
+      type: "IS_LOGGED_IN",
+      payload: false
+    });
+  };
+
   return (
     <div className={classes.root}>
       <Typography

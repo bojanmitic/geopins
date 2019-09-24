@@ -9,6 +9,7 @@ const NoContent = ({ classes }) => (
     <Typography
       noWrap
       component="h2"
+      variant="h6"
       align="center"
       color="textPrimary"
       gutterBottom
