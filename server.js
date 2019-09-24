@@ -14,6 +14,7 @@ mongoose
   .catch(err => console.error(err));
 
 const server = new ApolloServer({
+  cors: true,
   typeDefs,
   resolvers,
   context: async ({ req }) => {
