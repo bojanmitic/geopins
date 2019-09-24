@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { withStyles } from "@material-ui/core/styles";
+import { Paper } from "@material-ui/core";
+import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
+
 import Context from "../context";
 import NoContent from "./Pin/NoContent";
 import CreatePin from "./Pin/CreatePin";
-import { Paper } from "@material-ui/core";
 import PinContent from "./Pin/PinContent";
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
 
 const Blog = ({ classes }) => {
   const mobileSize = useMediaQuery("(max-width: 650px)");
@@ -14,10 +15,8 @@ const Blog = ({ classes }) => {
 
   let BlogContent;
   if (!draft && !currentPin) {
-    //no content
     BlogContent = NoContent;
   } else if (draft && !currentPin) {
-    //create pin component
     BlogContent = CreatePin;
   } else if (!draft && currentPin) {
     BlogContent = PinContent;

@@ -74,7 +74,7 @@ const CreatePin = ({ classes }) => {
       <div>
         <TextField
           name="title"
-          label="title"
+          label="Title"
           placeholder="Insert pin title"
           onChange={e => setTitle(e.target.value)}
         />
@@ -124,6 +124,7 @@ const CreatePin = ({ classes }) => {
           color="secondary"
           disabled={!title.trim() || !content.trim() || !image || submitting}
           onClick={handleSubmit}
+          type="submit"
         >
           Submit
           <SaveIcon className={classes.rightIcon} />

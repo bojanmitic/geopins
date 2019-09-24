@@ -16,7 +16,7 @@ export default function reducer(state, { type, payload }) {
         isAuth: false,
         currentUser: null
       };
-    case "CRATE_DRAFT":
+    case "CREATE_DRAFT":
       return {
         ...state,
         currentPin: null,
